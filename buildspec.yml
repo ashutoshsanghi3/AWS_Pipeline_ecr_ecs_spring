@@ -25,7 +25,8 @@ phases:
       - echo Pushing Docker image to Amazon ECR...
       - docker push $REPO_NAME:$IMAGE_TAG
       - echo Writing imagedefinitions.json...
-      - printf '[{"name":"springashutosh","imageUri":"%s.dkr.ecr.%s.amazonaws.com/%s:%s"}]' $ACCOUNT_ID $REGION $REPO_NAME $IMAGE_TAG > imagedefinitions.json
+      - printf '[{"name":"spring-cont","imageUri":"%s.dkr.ecr.%s.amazonaws.com/%s:%s"}]' $ACCOUNT_ID $REGION $REPO_NAME $IMAGE_TAG > imagedefinitions.json
+      #The name above should be matched with containerName in appspec.yml
       - echo Writing appspec.yml...
 
 artifacts:
